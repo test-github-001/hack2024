@@ -1,0 +1,150 @@
+/*
+ПЛАН СТРИМА №3
+
+1) многостраничный сайт
+2) адаптивная верстка
+3) публикация сайта
+*/
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+
+    /* Отключаем обводку элементов, при касании на мобильных устройствах для разных браузеров */
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Chrome/Safari/Opera */
+    -khtml-user-select: none; /* Konqueror */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none; /* для браузеров, которым ненужен префикс */
+}
+
+.container {
+    width: 900px;
+    height: 100%;
+    margin: 0 auto;
+    background-color: #00000077;
+}
+
+h1, h2, h3 {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+header {
+    background-color: blue;
+    height: 240px;
+    line-height: 240px;
+
+    background-position: center;
+    background-size: cover;
+    background-image: url('../images/header.jpg');
+}
+
+nav {
+    background-color: #ff00ff;
+    height: 80px;
+
+    position: sticky;
+    top: 0;
+}
+nav ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+}
+nav a {
+    text-decoration: none;
+}
+
+nav ul li {
+    font-size: 36px;
+    margin: 20px;
+    border: 2px #ffffff solid;
+    padding: 0 20px;
+    border-radius: 20px 0 20px 0;
+    transition: box-shadow 600ms linear, transform 600ms linear;
+}
+
+nav ul li:hover {
+    transform: translateY(-6px);
+    box-shadow: -1px 9px 10px 2px #000000;
+}
+
+main {
+    padding-top: 20px;
+    background-color: #00ff00;
+    height: 1240px;
+
+}
+footer{
+    background-color: blue;
+    height: 120px;
+}
+
+section {
+    text-shadow: 1px 3px 4px #ffffff;
+}
+
+
+#fixed-box {
+    position: fixed;
+    right: 0;
+    bottom: 120px;
+
+    box-sizing: border-box;
+    width: 200px;
+    height: 100px;
+    border: 5px #000000 solid;
+    border-radius: 50px 0 0 50px;
+    background-color: #ffffff;
+    transform: translateX(100px);
+    transition: transform 600ms ease-in-out, box-shadow 600ms ease-in-out;
+}
+#fixed-box:hover {
+    transform: translateX(0);
+    box-shadow: -3px 5px 9px 9px #686d29;
+}
+
+
+/* пример медиа-запроса, с описанием стилей, при ширине экрана от 320 пикселей и ниже */
+@media (max-width: 920px) {
+    .container {
+        width: 700px;
+        background-color: #ff000077;
+    }
+
+    main {
+        height: auto;
+    }
+
+    nav ul li {
+        font-size: 24px;
+    }
+}
+
+@media (max-width: 720px) {
+    .container {
+        width: 90%;
+        background-color: #ffffff77;
+    }
+
+    nav {
+        height: auto;
+    }
+
+    nav ul {
+        flex-direction: column;
+    }
+
+    nav ul li {
+        font-size: 18px;
+        margin: 10px;
+        padding: 0 10px;
+        border-radius: 10px 0 10px 0;
+    }
+}
